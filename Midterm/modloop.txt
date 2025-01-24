@@ -1,0 +1,5 @@
+mod_loop: //modulo
+    CP r21, r17  //r17 is what we modulo by
+    BRLO ones  
+    SUB r21, r17 //R21 is the result
+    RJMP mod_loop  

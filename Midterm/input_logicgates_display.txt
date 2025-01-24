@@ -1,0 +1,88 @@
+;The code reads two bits from PINC (pins PC0 and PC1) 
+;to determine which bitwise operation to perform (NOT, OR, AND, XOR).
+
+;PINC,1 and PINC,0
+;0 = NOT
+;1 = OR
+;2 = AND
+;3 = XOR
+;caseNot: com r21          ; NOT operation on r21
+;caseOr:  or r21, r20      ; OR operation between r21 and r20
+;caseAnd: and r21, r20     ; AND operation between r21 and r20
+;caseXor: eor r21, r20     ; XOR operation between r21 and r20
+//means if input is NOT, display result in R21
+
+.macro logicSeg
+
+    ldi r16, 0x03
+    and r16, @1
+    ldi zl, low(0x420)
+    ldi zh, high(0x420)
+    add zl, r16
+    lpm @0, z
+
+.endmacro 
+
+ldi r16, 0xff
+out ddrb, r16
+out ddrd, r16
+ldi r16, 0x00.
+out ddrc, r16 //input
+
+start:
+	
+	ldi r19, 0
+	ldi r20, 0
+	sbic pinc, 0
+		ldi r19, 1
+	sbic pinc, 1
+		ldi r20, 1
+
+	in r17, pinc
+	lsr r17 lsr r17
+	andi r17, 0x03
+	mov r21, r19
+	cpi r17, 0
+	breq caseNot
+	cpi r17, 1
+	breq caseOr
+	cpi r17, 2
+	breq caseAnd
+	cpi r17, 3
+	breq caseXor
+
+	
+
+caseNot: com r21	  rjmp finish
+caseOr:  or  r21, r20 rjmp finish
+caseAnd: and r21, r20 rjmp finish
+caseXor: eor r21, r20 rjmp finish
+	
+finish:
+	out portd, r21
+	logicSeg r18, r17
+    out portB, r18
+    rcall delay
+
+	rjmp start
+
+
+delay:
+    sts 0x318, r18
+    sts 0x319, r19
+    sts 0x320, r20
+    ldi r18, 4
+d1:    ldi r19, 20
+d2:    ldi r20, 25
+d3:    nop
+    dec r20 brne d3
+    dec r19 brne d2
+    dec r18 brne d1
+    lds r18, 0x318
+    lds r19, 0x319
+    lds r20, 0x320
+    ret
+
+.org 0x210
+segmentTable:
+    .db 0x40, 0x1c, 0x54, 0x5c

@@ -1,0 +1,10 @@
+div16:
+    CLR R18                  
+div16_loop:
+    CP R21, R17 //divide by 17      
+    BRLO done_div16  (branch if lower)       
+    SUB R21, R17             
+    INC R18 //R18++    R18 is the answer of division
+    RJMP div16_loop
+done_div16:
+    RET

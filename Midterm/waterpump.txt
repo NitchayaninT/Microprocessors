@@ -1,0 +1,26 @@
+ldi r16, 0xff
+out ddrb, r16
+ldi r16, 0x00
+out ddrd, r16
+
+//portb 0 = 1 when (pump start)
+//0 0, 0 1
+//portb 0 = 0 when (pump stops)
+//1 1, 1 0
+	
+
+; pind 0 = Sensor A -> 0 water not reached, 1 reached
+; pind 1 = Sensor B -> 0 water not reached, 1 reached
+; portb 0 = Pump Status (start 1/stop 0)
+
+ldi r17, 0
+
+start:
+	sbic pind, 0 ; water doesn't reach sensor A 
+		; water reaches sensor A, stop the pump
+		ldi r17, 0
+	sbis pind, 1 ; water reached sensor B
+		; water doesn't reach sensor B, start the pump
+		ldi r17, 1
+
+	out portb, r17

@@ -1,0 +1,12 @@
+DELAY:    LDI    R25, 10
+DL1:    LDI    R26, 200
+DL2:    LDI    R27, 250
+DL3:    NOP
+        NOP
+        DEC    R27
+        BRNE DL3
+        DEC    R26
+        BRNE DL2
+        DEC    R25
+        BRNE DL1
+        RET

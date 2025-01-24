@@ -1,0 +1,27 @@
+1. BRGE / BRMI (Branch if Greater or Equal / Branch if Minus)
+BRGE (Branch if Greater or Equal): This jump occurs if the signed comparison of two numbers indicates that the first number is greater than or equal to the second.
+BRMI (Branch if Minus): This jump occurs if the result of the previous operation is negative (sign bit set).
+
+2. BRLT / BRPL (Branch if Less Than / Branch if Plus)
+BRLT (Branch if Less Than): This jump occurs if the signed comparison of two numbers indicates that the first number is less than the second.
+BRPL (Branch if Plus): This jump occurs if the result of the previous operation is positive (sign bit cleared).
+
+3. BRNE / BREQ (Branch if Not Equal / Branch if Equal)
+BRNE (Branch if Not Equal): This jump occurs if the zero flag (Z) is cleared (i.e., the values compared were not equal).
+BREQ (Branch if Equal): This jump occurs if the zero flag (Z) is set (i.e., the values compared were equal).
+
+4. BRMI / BRVS (Branch if Negative / Branch if Overflow Set)
+BRMI (Branch if Negative): This jump occurs if the result of the last operation was negative (i.e., the sign flag is set).
+BRVS (Branch if Overflow Set): This jump occurs if the overflow flag (V) is set (i.e., the operation resulted in a signed overflow).
+
+5. BRSH / BRCS (Branch if Same or Higher / Branch if Carry Set)
+BRSH (Branch if Same or Higher): This jump occurs if the carry flag (C) is set, which means the result of the last operation was higher or equal.
+BRCS (Branch if Carry Set): This jump occurs if the carry flag (C) is set (i.e., no borrow occurred in a subtraction or the addition resulted in a carry).
+
+6. BRLO / BRCC (Branch if Lower / Branch if Carry Clear)
+BRLO (Branch if Lower): This jump occurs if the carry flag (C) is cleared, meaning the result of the last operation was lower.
+BRCC (Branch if Carry Clear): This jump occurs if the carry flag (C) is cleared, indicating no carry occurred in an addition, or a borrow occurred in a subtraction.
+
+7. BRGE / BRMI (Branch if Greater or Equal / Branch if Minus)
+BRGE (Branch if Greater or Equal): Jumps if the signed comparison shows the first value is greater than or equal.
+BRMI (Branch if Minus): Jumps if the result of the last operation was negative (sign bit set).

@@ -1,0 +1,32 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.7</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>C:\Users\User\Documents\Atmel Studio\7.0\LAB3-D\LAB3-D\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\User\Documents\Atmel Studio\7.0\LAB3-D\LAB3-D\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\avrasm\inc\m328pdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\User\Documents\Atmel Studio\7.0\LAB3-D\LAB3-D\Debug\LAB3-D.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>LAB3-D.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>LAB3-D.map</FILE>
+  <FILE>LAB3-D.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <DATA_1><FILE>C:\Users\User\Documents\Atmel Studio\7.0\LAB3-D\LAB3-D\main.asm</FILE><LINE>4</LINE></DATA_1>
+  <DATA_2><FILE>C:\Users\User\Documents\Atmel Studio\7.0\LAB3-D\LAB3-D\main.asm</FILE><LINE>5</LINE></DATA_2>
+  <main><FILE>C:\Users\User\Documents\Atmel Studio\7.0\LAB3-D\LAB3-D\main.asm</FILE><LINE>7</LINE></main>
+  <addbyte><FILE>C:\Users\User\Documents\Atmel Studio\7.0\LAB3-D\LAB3-D\main.asm</FILE><LINE>16</LINE></addbyte>
+  <addwithcarry><FILE>C:\Users\User\Documents\Atmel Studio\7.0\LAB3-D\LAB3-D\main.asm</FILE><LINE>34</LINE></addwithcarry>
+  <END><FILE>C:\Users\User\Documents\Atmel Studio\7.0\LAB3-D\LAB3-D\main.asm</FILE><LINE>48</LINE></END>
+ </LABELS>
+</ASSEMBLER_INFO>

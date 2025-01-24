@@ -1,0 +1,148 @@
+;
+; LAB1.asm
+;
+; Created: 10/18/2024 8:25:03 AM
+; Author : MUIC
+;
+
+//Activity 1
+; Replace with your application code
+	LDI R16,0xFF
+	OUT DDRB,R16
+
+L1: OUT PORTB,R16
+	LDI R20,0
+	OUT PORTB,R20
+	RJMP L1
+
+//Activity 2
+LDI R16, 6
+LDI R17, 5
+ADD R16, R17
+
+LDI R17, 8
+ADD R16, R17
+
+LDI R17, 0
+ADD R16, R17
+
+LDI R17, 0
+ADD R16, R17
+
+LDI R17, 8
+ADD R16, R17
+
+LDI R17, 1
+ADD R16, R17
+
+//Activity 3
+
+LDI R20, 0x99
+MOV R0, R20
+MOV R12, R0
+MOV R31, R12
+
+//Activity 4
+LDI R16, 0x92
+LDI R17, 0x23
+ADD R17, R16
+
+LDI R17, 0x66
+ADD R16, R17
+
+LDI R17, 0x87
+ADD R16, R17
+
+LDI R17, 0xF5
+ADD R16, R17
+
+//Activity 5
+	LDI R20,0x27
+	LDI R21,0x15
+	SUB R20, R21
+
+	LDI R20,0x20
+	LDI R21,0x15
+	SUB R20, R21
+
+	LDI R24,95
+	LDI R25,95
+	SUB R24, R25
+
+	LDI R22,50
+	LDI R23,70
+	SUB R22, R23
+
+L1: RJMP L1
+/*
+//Activity 6
+
+	LDI R20, 0
+	LDI R21, 0xFF
+	LDI R22, 0x11
+	LDI R23, 0x22
+
+	COM R20
+	COM R21
+	COM R22
+	COM R23
+
+L1: RJMP L1
+
+
+L1:
+LDI R20, 0x85
+LDI R21, 0x92
+ADD R20, R21
+
+2
+LDI R16, 0x15
+LDI R17, 0x72
+ADD R16, R17
+
+3
+LDI R25, 0xF5
+LDI R26, 0x52
+ADD R25, R26
+
+4
+LDI R25, 0xFE
+INC R25
+INC R25
+RJMP L1
+
+
+Activity 6-2
+.EQU SUM = 0x300
+.ORG 0x00
+	LDI R16, 0x25
+	LDI R17, 0x34
+	LDI R18, 0b00110001
+.ORG 0x100
+	ADD R16, R17
+	ADD R16, R18
+	LDI R17, 11
+	ADD R16, R17
+	STS SUM, R16
+HERE: JMP HERE
+
+Activity 7
+.SET RAM_START = 0x0100
+.CSEG
+.ORG 0x0000
+hello_data:
+	.DB "HELLO WORLD!"	
+main:
+	LDI YL, LOW(RAM_START)
+	LDI YH, HIGH(RAM_START)
+	LDI ZL, LOW(2*hello_data)
+	LDI ZH, HIGH(2*hello_data)
+	LDI R18, 12
+copy_loop:
+	LPM R16, Z+
+	ST Y+, R16
+	DEC R18
+	BRNE copy_loop
+END:
+	rjmp END
+	*/
